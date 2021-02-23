@@ -29,7 +29,7 @@
                         <div class="card">
                             <div class="card-header d-flex justify-content-between align-items-center   ">
                                 <h2>All Task</h2>
-                                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#createTask">Create Task</a>
+                                <a  class="btn btn-primary" data-toggle="modal" data-target="#createTask">Create Task</a>
                             </div>
                             <card-body>
                                 <table class="table table-bordered">
@@ -48,7 +48,7 @@
                                             <td class="task-name">{{$task->name}} </td>
                                             <td>
                                                 <a href="#" data-toggle="modal" data-target="#editTask" class="btn btn-primary edit">Edit</a>
-                                                <a href="" class="btn btn-danger" >Delete</a>
+                                                <a href="#" data-toggle="modal" data-target="#deleteTask" class="btn btn-danger delete" >Delete</a>
                                             </td>
                                            
                                             
@@ -112,6 +112,31 @@
             <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             <button type="submit" class="btn btn-success">Update Task</button>
+            </div>
+        </form>
+      </div>
+    
+    </div>
+  </div>
+
+  {{-- Delete Modal ---}}
+  <div class="modal fade" id="deleteTask" tabindex="-1" role="dialog" aria-labelledby="deleteTaskTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+          <form id="deleteTaskFrom">
+            <div class="modal-header">
+            <h5 class="modal-title" id="deleteTaskTitle">Delete Task</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <div id="deleteTaskMessage"></div>
+               <h4>Are You Sure to Delete This??</h4>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-danger">Delete Task</button>
             </div>
         </form>
       </div>
