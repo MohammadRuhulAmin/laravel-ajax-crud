@@ -45,7 +45,7 @@
                                         <tr data-id="{{$task->id}}">
                                             
                                             <td>{{$task->id}}</td>
-                                            <td>{{$task->name}} </td>
+                                            <td class="task-name">{{$task->name}} </td>
                                             <td>
                                                 <a href="#" data-toggle="modal" data-target="#editTask" class="btn btn-primary edit">Edit</a>
                                                 <a href="" class="btn btn-danger" >Delete</a>
@@ -95,7 +95,7 @@
   <div class="modal fade" id="editTask" tabindex="-1" role="dialog" aria-labelledby="createTaskTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
-          <form id="EditTaskFrom">
+          <form id="editTaskFrom">
             <div class="modal-header">
             <h5 class="modal-title" id="EditTaskTitle">Edit Task</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
