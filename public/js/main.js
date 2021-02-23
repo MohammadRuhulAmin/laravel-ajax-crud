@@ -5,7 +5,7 @@ $.ajaxSetup({
 });
 
 
-
+//create task js file
 
 $('#createTaskForm').submit(function(e){
     e.preventDefault();
@@ -42,9 +42,26 @@ $('#createTaskForm').submit(function(e){
          $.each(error.responseJSON.errors,function(index,value){
             $(msg).find('#errorMessage').append(`<li>The Field Is Required</li>`)
          });
-
-
        }
     });
     
 });
+
+//Edit Task 
+$(document).on('click','.edit',function(){
+    let task = $(this).closest('tr').data('id');
+    let modal = $('#EditTaskFrom');
+   $.ajax({
+    type:'GET',
+    url:'task/edit/'+task,
+    success:function(data){
+       $(modal).find('#editInput').val(data.name);
+    },
+    error:function(data){
+        console.log(error);
+    }
+   });
+});
+
+
+// edit task message

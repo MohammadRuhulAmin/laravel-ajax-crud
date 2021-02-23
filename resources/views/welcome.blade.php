@@ -42,12 +42,12 @@
                                     </thead>
                                     <tbody id="taskTableBody">
                                         @foreach($tasks as $task)
-                                        <tr>
+                                        <tr data-id="{{$task->id}}">
                                             
                                             <td>{{$task->id}}</td>
                                             <td>{{$task->name}} </td>
                                             <td>
-                                                <a href="" class="btn btn-primary">Edit</a>
+                                                <a href="#" data-toggle="modal" data-target="#editTask" class="btn btn-primary edit">Edit</a>
                                                 <a href="" class="btn btn-danger" >Delete</a>
                                             </td>
                                            
@@ -84,6 +84,34 @@
             <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             <button type="submit" class="btn btn-success">Create Task</button>
+            </div>
+        </form>
+      </div>
+    
+    </div>
+  </div>
+
+{{-- Edit Modal --}}
+  <div class="modal fade" id="editTask" tabindex="-1" role="dialog" aria-labelledby="createTaskTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+          <form id="EditTaskFrom">
+            <div class="modal-header">
+            <h5 class="modal-title" id="EditTaskTitle">Edit Task</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <div id="editTaskMessage"></div>
+                <div class="form-group">
+                    <label for="">Edit task name</label>
+                    <input type="text" class="form-control" id="editInput" name="name" placeholder="Edit  task name">
+                </div>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-success">Update Task</button>
             </div>
         </form>
       </div>

@@ -65,9 +65,13 @@ class TaskController extends Controller
      * @param  \App\Models\Task  $task
      * @return \Illuminate\Http\Response
      */
-    public function edit(Task $task)
+    public function edit($id)
     {
-        //
+       $task = Task::find($id);
+       if($task){
+           return response()->json($task,200);
+       }
+       else return response()->json('Task Not found!');
     }
 
     /**
